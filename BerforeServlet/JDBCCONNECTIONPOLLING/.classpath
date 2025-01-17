@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="D:/Java_All_JaarFiles/hikaricp jars (3).zip"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SQLIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/IOLIB"/>
+	<classpathentry kind="lib" path="D:/Java_All_JaarFiles/hikaricp jars (3)/hibernate-hikaricp-5.6.0.Final.jar"/>
+	<classpathentry kind="lib" path="D:/Java_All_JaarFiles/hikaricp jars (3)/HikariCP-3.2.0.jar"/>
+	<classpathentry kind="lib" path="D:/Java_All_JaarFiles/hikaricp jars (3)/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="D:/Java_All_JaarFiles/hikaricp jars (3)/slf4j-simple-1.7.25.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

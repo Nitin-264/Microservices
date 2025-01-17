@@ -1,0 +1,60 @@
+package com.jdbcutil;
+
+import java.sql.Statement;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Properties;
+
+import com.mysql.cj.jdbc.MysqlConnectionPoolDataSource;
+
+public class MakeConnection {
+	private static FileInputStream fis=null;
+	private static Properties properties=null;
+static {
+	String path="D:\\CRUDAPP\\src\\com\\jdbcutil\\DataBase.properties";
+	try {
+		fis=new FileInputStream(path);
+		properties=new Properties();
+		properties.load(fis);
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}finally {
+		try {
+			fis.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+public static Connection getConnection() throws SQLException {
+	
+	MysqlConnectionPoolDataSource datasource = new MysqlConnectionPoolDataSource();
+	datasource.setUrl(properties.getProperty("url"));
+	datasource.setUser(properties.getProperty("user"));
+	datasource.setPassword(properties.getProperty("password"));
+		return datasource.getConnection();
+	
+}
+public static void cleanObject(Connection connection,Statement stmt,ResultSet rs) {
+	try {
+		if(connection!=null) {
+			connection.close();
+		}
+		if(stmt!=null) {
+			stmt.close();
+		}
+		if(rs!=null) {
+			rs.close();
+		}
+			} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
+}
